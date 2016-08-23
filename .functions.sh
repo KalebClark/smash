@@ -5,3 +5,4 @@ function load_smash_dir {
         source $fnc
     done
 }
+
