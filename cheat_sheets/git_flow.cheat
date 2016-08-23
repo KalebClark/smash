@@ -1,0 +1,65 @@
+Git Flow cheat sheet.
+==============================================================================
+
+The git flow features are listed in the order that they should be executed.
+For example with a release, you should start the release, publish it, finish and then push tags.
+
+Features:
+-------------------------------------------------------------------------------
+    Start Developing a new feature: git flow feature start MYFEATURE
+        * Creates a new branch based on 'develop'
+        * Switches to the newly created branch
+
+    Finish up a feature: git flow feature finish MYFEATURE
+        * Merges MYFEATURE into 'develop'
+        * Removes the branch MYFEATURE
+        * Switches back to the 'develop' branch
+
+    Publish a feature: git flow feature publish MYFEATURE
+        * Publishes the feature to remote server so it can be used by other users
+
+    Fetch a published feature: git flow feature pull origin MYFEATURE
+        * Pulls the feature from the remote server
+
+    Track a feature: git flow feature track MYFEATURE
+        * Tracks the feature (better description needed)
+
+Releases:
+-------------------------------------------------------------------------------
+    Releases are typically named by a version. ie: v1.2.23, v0.0.1 etc.
+
+    Start a release: git flow release start RELEASE [BASE]
+        (You can optionally supply a [BASE] commit sha-1 to start the release from)
+        * Creates a release branch from the 'develop' branch
+
+    Publish a release: git flow release publish RELEASE
+        * Pushes release to remote server so other developers can commit to it.
+
+    Track a release: git flow release track RELEASE
+        * Tracks the release (better description needed)
+
+    Finish up a release: git flow release finish RELEASE
+        * Merges the release branch into 'master'
+        * Tags the relase with its name
+        * Back-merges the release into 'develop' branch
+        * Removes the release branch
+
+    Push release tags: git push --tags
+        * Pushes the tags created by the release to the remote server
+
+Hot Fixes:
+-------------------------------------------------------------------------------
+    Hotfixes arise from the necessity to act immediatly upon an undesired state of 
+    a live production version, and may be branched off from the corresponding tag
+    on the master branch that marks the production version.
+
+    Start a hotfix: git flow hotfix start VERSION [BASENAME]
+        (The version argument hearby marks the new hotfix release name. Optionally
+        you can specify a basename to start from)
+        * Creates a hotfix branch from master
+
+    Finish a hotfix: git flow hotifx finish VERSION
+        * Merges back into develop AND master.
+        * Master merge is tagged with the hotfix version
+
+
