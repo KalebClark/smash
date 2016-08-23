@@ -7,9 +7,11 @@ Simply clone this repo into ~/.smash and run the ```./install.sh``` script. It w
 source ~/.smash/smash.sh
 ```
 
-How to clone the repo into ~/.smash you ask?
+How to clone the repo into ~/.smash and install you ask?
 ```
-git clone https://github.com/KalebClark/smash.git ~/.smash
+$ git clone https://github.com/KalebClark/smash.git ~/.smash
+$ cd ~/.smash
+$ ./install.sh
 ```
 
 ### Features
